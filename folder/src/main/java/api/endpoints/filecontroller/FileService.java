@@ -11,11 +11,27 @@ import java.util.List;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Service;
 
+/**
+ * 
+ * Service should implement the process logic <br>
+ * The @Service-Annotation is needed so that the Class will <br>
+ * be instantiated by the spring framework when starting the application
+ * 
+ * @author Dennis
+ *
+ */
 @Service
 public class FileService {
+
+	/**
+	 * Default way to load properties from application.properties in src/main/resources
+	 */
+	@Value("${path}")
+	private String path;
 
 	public String getFileContentAsString(String string) {
 
@@ -23,10 +39,17 @@ public class FileService {
 	}
 
 	public FileRepresentation getValuesFromCSV(String path) throws IOException {
-
 		return readCSV(path);
 	}
 
+	/**
+	 * 
+	 * Reads CSV-File from filesystem as an example on how it you can load a file and work with it
+	 * 
+	 * @param path
+	 * @return
+	 * @throws IOException
+	 */
 	private FileRepresentation readCSV(String path) throws IOException {
 
 		FileSystemResource file = new FileSystemResource(path);

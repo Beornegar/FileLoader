@@ -1,5 +1,12 @@
 package api.endpoints.endpoints;
 
+/**
+ * Class used for defining the given endpoints. <br>
+ * its better to use a class or enum instead of strings, so that we have a possiblity to find references. <br>
+ * 
+ * @author Dennis
+ *
+ */
 public final class Endpoints {
 
 	public static final String BASE_API = "/api"; 

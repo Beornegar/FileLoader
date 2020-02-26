@@ -3,8 +3,20 @@ package api.endpoints.filecontroller;
 import java.time.OffsetDateTime;
 import java.util.List;
 
+import io.swagger.annotations.ApiModel;
+
+/**
+ * Representation of an CSV-File which will be sent as a JSON-File by the FileController
+ * 
+ * @author Dennis
+ *
+ */
+@ApiModel(value = "FileRepresentation", discriminator = "type")
 public class FileRepresentation {
 
+	/**
+	 * Java 8 - Way for Timestamps
+	 */
 	private OffsetDateTime timestamp;
 
 	private List<String> headers;

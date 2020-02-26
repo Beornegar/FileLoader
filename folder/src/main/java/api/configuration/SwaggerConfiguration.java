@@ -9,6 +9,13 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * Registers and configures swagger <br>
+ * All Endpoints will be displayed in the swagger mask <br>
+ * 
+ * @author Dennis
+ *
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {                                    
